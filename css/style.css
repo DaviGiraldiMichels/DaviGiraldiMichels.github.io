@@ -1,0 +1,301 @@
+/* Reset Básico e Variáveis de Cor (Mesma Paleta) */
+:root {
+    --bg-color: #0a0a14; /* Fundo principal ainda mais escuro */
+    --primary-color: #22d3ee; /* Ciano como cor de destaque */
+    --card-bg: rgba(34, 211, 238, 0.05); /* Fundo dos cards com leve tone de ciano */
+    --text-color: #b0b0b0; /* Texto um pouco mais suave */
+    --header-bg: rgba(10, 10, 20, 0.7); /* Fundo do header com mais transparência */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    background-image: linear-gradient(180deg, #0a0a14 0%, #111827 100%); /* Gradiente mais sutil */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 10;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul li {
+    margin-left: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.btn-contact {
+    background: var(--primary-color);
+    color: #0a0a14; /* Texto do botão escuro para contraste */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.btn-contact:hover {
+    color: #0a0a14;
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Seção Hero */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* Novo estilo para o container da foto de perfil na seção Hero */
+.profile-pic-container {
+    margin-bottom: 2rem; /* Espaço entre a foto e o texto */
+    position: relative;
+}
+
+.profile-pic-hero {
+    width: 180px; /* Tamanho da foto */
+    height: 180px;
+    border-radius: 50%; /* Torna a foto redonda */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    border: 2px solid var(--primary-color); /* Borda destacada */
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); /* Sombra sutil para destacar */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 30px; /* Espaçamento maior entre os blocos de habilidades */
+    margin-top: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column; /* Coloca ícone e texto em coluna */
+    align-items: center; /* Centraliza o ícone e o texto horizontalmente */
+    text-align: center;
+    width: 100px; /* Largura fixa para cada item, ajuste se necessário */
+}
+
+.skill-item i {
+    font-size: 4em; /* Tamanho do ícone */
+    margin-bottom: 10px; /* Espaço entre o ícone e o texto */
+    color: #3498db; /* Cor dos ícones, ajuste ao seu gosto */
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.skill-item span {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555; /* Cor do texto */
+}
+
+.skill-item:hover i {
+    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+}
+
+/* Para alguns ícones específicos, você pode querer cores personalizadas */
+.skill-item .fa-php { color: #8892BF; }
+.skill-item .fa-python { color: #306998; }
+.skill-item .fa-html5 { color: #E34F26; }
+.skill-item .fa-css3-alt { color: #1572B6; }
+.skill-item .fa-js { color: #F7DF1E; }
+/* Para ROS, como é um ícone genérico, mantenha a cor padrão ou defina uma */
+.skill-item .fa-robot { color: #333; }
+.hero-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.social-links a:hover {
+    border-color: var(--primary-color);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+}
+
+.scroll-indicator a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* Seções de Conteúdo */
+.content-section {
+    padding: 6rem 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    /* Alinhar conteúdo à esquerda se não houver imagem */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Removido o estilo .profile-pic, pois a imagem de perfil agora está no Hero */
+/* .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+} */
+
+/* Galeria de Projetos */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-item {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.project-item img {
+    width: 100%;
+    display: block;
+    filter: grayscale(80%);
+    transition: filter 0.4s ease;
+}
+
+.project-item:hover img {
+    filter: grayscale(0%);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contato */
+#contato {
+    text-align: center;
+}
+
+.email-link {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.email-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.email-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Rodapé */
+.main-footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
