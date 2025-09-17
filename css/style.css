@@ -122,47 +122,6 @@ body {
     color: #fff;
 }
 
-.skills-list {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    gap: 30px; /* Espaçamento maior entre os blocos de habilidades */
-    margin-top: 20px;
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column; /* Coloca ícone e texto em coluna */
-    align-items: center; /* Centraliza o ícone e o texto horizontalmente */
-    text-align: center;
-    width: 100px; /* Largura fixa para cada item, ajuste se necessário */
-}
-
-.skill-item i {
-    font-size: 4em; /* Tamanho do ícone */
-    margin-bottom: 10px; /* Espaço entre o ícone e o texto */
-    color: #3498db; /* Cor dos ícones, ajuste ao seu gosto */
-    transition: transform 0.3s ease; /* Animação ao passar o mouse */
-}
-
-.skill-item span {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #555; /* Cor do texto */
-}
-
-.skill-item:hover i {
-    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
-}
-
-/* Para alguns ícones específicos, você pode querer cores personalizadas */
-.skill-item .fa-php { color: #8892BF; }
-.skill-item .fa-python { color: #306998; }
-.skill-item .fa-html5 { color: #E34F26; }
-.skill-item .fa-css3-alt { color: #1572B6; }
-.skill-item .fa-js { color: #F7DF1E; }
-/* Para ROS, como é um ícone genérico, mantenha a cor padrão ou defina uma */
-.skill-item .fa-robot { color: #333; }
 .hero-text p {
     font-size: 1.2rem;
     max-width: 600px;
@@ -211,15 +170,6 @@ h2 {
     align-items: center;
     gap: 3rem;
 }
-
-/* Removido o estilo .profile-pic, pois a imagem de perfil agora está no Hero */
-/* .profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-} */
 
 /* Galeria de Projetos */
 .project-gallery {
@@ -299,3 +249,55 @@ h2 {
     padding: 2rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* === NOVOS ESTILOS PARA CARDS DE HABILIDADES === */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 25px; /* Espaço entre os cards */
+    margin-top: 20px;
+}
+
+/* Estilo base de cada card */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito de hover (quando o mouse passa por cima) */
+.skill-card:hover {
+    transform: translateY(-8px); /* Move o card 8px para cima */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra, dando a impressão de "flutuar" */
+    border-color: var(--primary-color);
+}
+
+/* Estilo do ícone dentro do card */
+.skill-card i {
+    font-size: 3.5em; /* Tamanho do ícone */
+    margin-bottom: 10px;
+}
+
+/* Estilo do texto (nome da linguagem) */
+.skill-card span {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* Cores personalizadas para os ícones */
+.skill-card .fa-php { color: #8892BF; }
+.skill-card .fa-python { color: #306998; }
+.skill-card .fa-html5 { color: #E34F26; }
+.skill-card .fa-css3-alt { color: #1572B6; }
+.skill-card .fa-js { color: #F7DF1E; }
+.skill-card .fa-robot { color: #333; }
